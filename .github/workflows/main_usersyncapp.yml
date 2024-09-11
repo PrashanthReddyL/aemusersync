@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.9'
 
       - name: Create and start virtual environment
         run: |
@@ -31,7 +31,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Change dir
-        run: cd user_sync.py
+        run: |
+          pwd
+          ls
+          cd user_sync.py-2
         
       - name: Install user sync deps
         run: |

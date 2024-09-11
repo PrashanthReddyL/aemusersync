@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Change dir
+        run: cd user_sync.py
+        
       - name: Install user sync deps
         run: |
           pip install external/okta-0.0.3.1-py2.py3-none-any.whl

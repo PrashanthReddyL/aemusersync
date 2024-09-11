@@ -29,7 +29,19 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-        
+
+      - name: Install user sync deps
+        run: |
+          pip install external/okta-0.0.3.1-py2.py3-none-any.whl
+          pip install ./sign_client
+          pip install -e .
+          pip install -e .[test]
+          pip install -e .[setup]
+
+      - name: Build Sync tool
+        run: |
+          make
+          ls -la dist/
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment

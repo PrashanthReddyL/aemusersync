@@ -34,7 +34,6 @@ jobs:
         run: |
           pwd
           ls
-          cd user_sync.py-2
         
       - name: Install user sync deps
         run: |

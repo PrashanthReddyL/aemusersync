@@ -115,5 +115,5 @@ jobs:
           AZURE_APP_SERVICE_USER: ${{ secrets.AZURE_APP_SERVICE_USER }}
           AZURE_APP_SERVICE_PASSWORD: ${{ secrets.AZURE_APP_SERVICE_PASSWORD }}
         run: |
-          curl -u $AZURE_APP_SERVICE_USER:$AZURE_APP_SERVICE_PASSWORD https://usersyncapp-bjegbdd9dmegcdar.scm.eastus-01.azurewebsites.net/api/command -d '{"command": "dir /home/site/wwwroot"}' -H "Content-Type: application/json"
+          curl -u $AZURE_APP_SERVICE_USER:$AZURE_APP_SERVICE_PASSWORD https://usersyncapp-bjegbdd9dmegcdar.scm.eastus-01.azurewebsites.net/api/command -d '{"command": "ls -la /home/site/wwwroot"}' -H "Content-Type: application/json"
           

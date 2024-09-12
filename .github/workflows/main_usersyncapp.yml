@@ -109,4 +109,11 @@ jobs:
         with:
           app-name: 'usersyncapp'
           slot-name: 'Production'
+
+      - name: List contents of wwwroot directory
+        env:
+          AZURE_APP_SERVICE_USER: ${{ secrets.AZURE_APP_SERVICE_USER }}
+          AZURE_APP_SERVICE_PASSWORD: ${{ secrets.AZURE_APP_SERVICE_PASSWORD }}
+        run: |
+          curl -u $AZURE_APP_SERVICE_USER:$AZURE_APP_SERVICE_PASSWORD https://usersyncapp-bjegbdd9dmegcdar.scm.azurewebsites.net/api/command -d '{"command": "dir /home/site/wwwroot"}' -H "Content-Type: application/json"
           

@@ -60,9 +60,10 @@ jobs:
         run: pip install -e .[setup]
         
       - name: Build Sync tool
-        run: |
-          make
-          ls -la dist/
+        run: make
+
+      - name: DIST folder Contents 
+        run: ls -la dist/
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
